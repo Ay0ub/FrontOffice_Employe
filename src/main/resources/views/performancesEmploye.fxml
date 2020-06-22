@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.Cursor?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.controllers.PerformancesEmployeController"
+      prefWidth="600"
+      prefHeight="600"
+      spacing="20">
+    <padding>
+        <Insets top="30"/>
+    </padding>
+    <Accordion expandedPane="$firstPane">
+        <panes>
+            <TitledPane text="Progression des procédures traitées"
+                        fx:id="firstPane">
+                <LineChart  fx:id="lineChart"
+                            title="Nombre de procédures traitées par jour">
+                    <xAxis>
+                        <CategoryAxis fx:id="jourAxis"
+                                      side="BOTTOM" label="Jours"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="nbreProcsAxis"
+                                    label="Nombre de procédures traitées"
+                                    side="LEFT"/>
+                    </yAxis>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </LineChart>
+
+            </TitledPane>
+
+            <TitledPane text="Proportions des procédures traitées">
+                <PieChart fx:id="piechart"
+                          title="Proportions des documents traités"
+                          legendSide="LEFT"
+                          HBox.hgrow="ALWAYS">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </PieChart>
+            </TitledPane>
+
+        </panes>
+    </Accordion>
+</VBox>

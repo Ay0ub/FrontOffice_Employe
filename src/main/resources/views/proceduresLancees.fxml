@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.controllers.ProceduresLanceesController"
+      prefWidth="700" spacing="20">
+    <padding>
+        <Insets top="30"/>
+    </padding>
+
+    <!--Options des procédures-->
+    <ComboBox fx:id="optionsProcedures"
+              prefWidth="200"/>
+
+    <!--Table des procédures lancées-->
+    <TableView fx:id="procedures">
+        <columns>
+            <TableColumn fx:id="numero" prefWidth="100" text="Numéro">
+                <cellValueFactory>
+                    <PropertyValueFactory property="numero" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nomProc" prefWidth="200"
+                         text="Nom de la procédures">
+                <cellValueFactory>
+                    <PropertyValueFactory property="NomProc" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="date" prefWidth="200"
+                         text="Date de debut">
+                <cellValueFactory>
+                    <PropertyValueFactory property="date" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tauxAvancement" prefWidth="200"
+                         text="Taux d'avancement">
+                <cellValueFactory>
+                    <PropertyValueFactory property="date" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="boutonConsulter" prefWidth="100"
+                         text="Actions">
+                <cellValueFactory>
+                    <PropertyValueFactory property="consulter" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

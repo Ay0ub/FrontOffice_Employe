@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.controllers.archivesController"
+      prefWidth="800" spacing="20">
+    <padding>
+        <Insets top="30"/>
+    </padding>
+    <!--Procédures-->
+    <ComboBox fx:id="optionsProcs"
+              prefWidth="200"/>
+    <!---->
+    <TableView fx:id="procedures">
+        <columns>
+            <TableColumn fx:id="numero" prefWidth="60" text="Numéro">
+                <cellValueFactory>
+                    <PropertyValueFactory property="numero" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nomDemande" prefWidth="150" text="Nom">
+                <cellValueFactory>
+                    <PropertyValueFactory property="Nom de la demande" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="dateDebut" prefWidth="150"
+                         text="Date de debut">
+                <cellValueFactory>
+                    <PropertyValueFactory property="dateDebut" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="dateFin" prefWidth="200"
+                         text="Date de fin">
+                <cellValueFactory>
+                    <PropertyValueFactory property="dateFin" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="boutonSupprimer" prefWidth="200"
+                         text="Supprimer">
+                <cellValueFactory>
+                    <PropertyValueFactory property="supprimer" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

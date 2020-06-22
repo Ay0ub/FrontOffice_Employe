@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.controllers.ConsulterDemEmpController"
+            prefWidth="700"
+            prefHeight="400">
+    <padding>
+        <Insets top="30"/>
+    </padding>
+    <top>
+        <VBox spacing="10">
+            <GridPane hgap="10" vgap="20">
+                <!--Nom de la procédure-->
+                <Label text="Nom de la procédure"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="0">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+                <Label fx:id="nomProc"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="1">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+
+                <!--Numéro de la demande-->
+                <Label text="Numéro de la demande"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="0">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+                <Label fx:id="numDemande"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="1">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+
+                <!--Numéro du citoyen-->
+                <Label text="Numéro du citoyen"
+                       GridPane.rowIndex="2"
+                       GridPane.columnIndex="0">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+                <Label fx:id="numCitoyen"
+                       GridPane.rowIndex="2"
+                       GridPane.columnIndex="1">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+            </GridPane>
+
+            <!--Table des documents envoyés par le client-->
+            <TitledPane text="Liste des documents">
+                <TableView fx:id="documentTable" prefHeight="300">
+                    <columns>
+                        <TableColumn fx:id="numero" prefWidth="128" text="Numéro">
+                        </TableColumn>
+                        <TableColumn fx:id="nomDoc" prefWidth="243" text="Nom">
+                        </TableColumn>
+                        <TableColumn fx:id="visualiserDoc" prefWidth="162"
+                                     text="Actions">
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </TitledPane>
+
+        </VBox>
+    </top>
+
+    <bottom>
+        <BorderPane>
+            <padding>
+                <Insets bottom="10"/>
+            </padding>
+            <left>
+                <HBox >
+                    <!--Bouton de retourner-->
+                    <Button onAction="#onRetour" prefHeight="40"
+                            prefWidth="40" style="-fx-background-color:transparent">
+                        <graphic>
+                            <ImageView>
+                                <Image requestedHeight="40" requestedWidth="40"
+                                       url="@/images/back.png"/>
+                            </ImageView>
+                        </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                    <Label text="Précédent">
+                        <padding>
+                            <Insets top="10"/>
+                        </padding>
+                        <font>
+                            <Font name="Bell MT Bold" size="20" />
+                        </font>
+                    </Label>
+                </HBox>
+            </left>
+            <right>
+                <HBox spacing="10">
+                    <padding>
+                        <Insets topRightBottomLeft="10" />
+                    </padding>
+                    <Button onAction="#onAccepter"
+                            style="-fx-background-color:#009E0F" text="Accepter"
+                            textFill="white" />
+                    <Button onAction="#onMiseAJour"
+                            style="-fx-background-color:#FF4500" text="Mettre à Jour"
+                            textFill="white" />
+                    <Button onAction="#onRejeter"
+                            style="-fx-background-color:#990000" text="Rejeter"
+                            textFill="white" />
+                </HBox>
+            </right>
+        </BorderPane>
+    </bottom>
+
+</BorderPane>
+

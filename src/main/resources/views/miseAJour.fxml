@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.controllers.MiseAJourController"
+            prefWidth="600">
+    <top>
+        <VBox spacing="20">
+            <padding>
+                <Insets top="10"/>
+            </padding>
+            <HBox spacing="20">
+                <Label text="Raison principale">
+                    <font>
+                        <Font name="System Bold" size="16" />
+                    </font>
+                </Label>
+                <TextField  fx:id="rapportField"
+                            promptText="Saisissez la raison de votre décision"
+                            prefWidth="200">
+                </TextField>
+            </HBox>
+            <TitledPane prefWidth="300"
+                        prefHeight="200"
+                        text="Ajouter les documents à déposer">
+                <VBox spacing="10">
+                    <HBox spacing="20">
+                        <Label text="Nom">
+                            <font>
+                                <Font name="System Bold" size="16" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="documentSaisi" prefWidth="200"/>
+                        <Button prefWidth="100"
+                                onAction="#onAjouter"
+                                style="-fx-background-color:#009E0F"
+                                text="Ajouter" textFill="white"/>
+                    </HBox>
+                    <TableView fx:id="docsAjoutes">
+                        <columns>
+                            <TableColumn fx:id="nomDoc" prefWidth="400"
+                                         text="Nom du document">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="nom" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="deleteDoc" prefWidth="200" text="Actions">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="consulter" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </top>
+    <bottom>
+        <VBox>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <Button prefWidth="100"
+                    onAction="#onValider"
+                    style="-fx-background-color:#FF9900"
+                    text="Enregistrer" textFill="white"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

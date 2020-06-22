@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="org.controllers.AccueilController"
+          alignment="CENTER"
+          hgap="30" vgap="30">
+
+    <padding>
+        <Insets topRightBottomLeft="30"/>
+    </padding>
+
+    <!-- Visualisation des demandes -->
+    <BorderPane
+            prefHeight="200"
+            prefWidth="400"
+            style="-fx-background-color:#6AA84F"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="0">
+        <top>
+            <HBox>
+                <ImageView>
+                    <Image requestedHeight="80"
+                           requestedWidth="80"
+                           url="@/images/depot.png"/>
+                </ImageView>
+                <Label text="Demandes Déposées" textFill="white">
+                    <padding>
+                        <Insets left="10.0" top="20.0" />
+                    </padding>
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                </Label>
+            </HBox>
+        </top>
+        <bottom>
+            <Label fx:id="nbDepots" BorderPane.alignment="BOTTOM_RIGHT"
+                   textFill="white">
+                <padding>
+                    <Insets right="20" bottom="10"/>
+                </padding>
+                <font>
+                    <Font name="Bell MT bold" size="20" />
+                </font>
+            </Label>
+        </bottom>
+    </BorderPane>
+
+    <!--Procédures Lancées-->
+    <BorderPane
+            prefHeight="200"
+            prefWidth="400"
+            style="-fx-background-color:#9e2800"
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="0">
+        <top>
+            <HBox>
+                <ImageView>
+                    <Image requestedHeight="80"
+                           requestedWidth="80"
+                           url="@/images/procLancees.png"/>
+                </ImageView>
+                <Label text="Procédures Lancées" textFill="white">
+                    <padding>
+                        <Insets left="10.0" top="20.0" />
+                    </padding>
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                </Label>
+            </HBox>
+        </top>
+        <bottom>
+            <Label fx:id="nbProcsLancees" BorderPane.alignment="BOTTOM_RIGHT"
+                   textFill="white">
+                <padding>
+                    <Insets right="20" bottom="10"/>
+                </padding>
+                <font>
+                    <Font name="Bell MT bold" size="20" />
+                </font>
+            </Label>
+        </bottom>
+    </BorderPane>
+</GridPane>

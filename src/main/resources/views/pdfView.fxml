@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.controllers.PdfController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <center>
+        <Pagination fx:id="pagination"
+                    prefHeight="46.0" prefWidth="600.0"
+                    BorderPane.alignment="TOP_CENTER" />
+    </center>
+    <bottom>
+        <BorderPane>
+            <padding>
+                <Insets bottom="10"/>
+            </padding>
+            <left>
+                <HBox >
+                    <!--Bouton de retourner-->
+                    <Button fx:id="retour" onAction="#onRetour" prefHeight="40"
+                            prefWidth="40" style="-fx-background-color:transparent">
+                        <graphic>
+                            <ImageView>
+                                <Image requestedHeight="40" requestedWidth="40"
+                                       url="@/images/back.png"/>
+                            </ImageView>
+                        </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                    <Label text="Précédent">
+                        <padding>
+                            <Insets top="10"/>
+                        </padding>
+                        <font>
+                            <Font name="Bell MT Bold" size="20" />
+                        </font>
+                    </Label>
+                </HBox>
+            </left>
+        </BorderPane>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="760.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.controllers.MenuChefController">
+
+
+    <top>
+        <BorderPane style="-fx-background-color:#DDD" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets topRightBottomLeft="5"/>
+            </padding>
+            <top>
+                <BorderPane prefHeight="50" prefWidth="700"
+                            style="-fx-background-color:#2B78E4">
+
+                    <left>
+                        <HBox>
+                            <padding>
+                                <Insets left="10"/>
+                            </padding>
+                            <ImageView>
+                                <Image requestedHeight="80" requestedWidth="80"
+                                       url="@/images/divisions.png"/>
+                            </ImageView>
+                            <Label fx:id="division" text="Division XXX" textFill="white">
+                                <padding>
+                                    <Insets left="10" top="30" />
+                                </padding>
+                                <font>
+                                    <Font name="Bell MT Bold" size="24" />
+                                </font>
+                            </Label>
+                        </HBox>
+                    </left>
+
+                    <right>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="10">
+                            <padding>
+                                <Insets right="10"/>
+                            </padding>
+                            <ImageView>
+                                <Image requestedHeight="30" requestedWidth="30"
+                                       url="@/images/calender.png"/>
+                            </ImageView>
+                            <Label fx:id="date"
+                                   text="02 Septembre 2020"
+                                   textFill="white"
+                                   BorderPane.alignment="TOP_RIGHT">
+                                <font>
+                                    <Font name="Bell MT Bold" size="24" />
+                                </font>
+                            </Label>
+                        </HBox>
+                    </right>
+                </BorderPane>
+            </top>
+        </BorderPane>
+    </top>
+
+    <left>
+        <VBox prefWidth="300" spacing="30" style="-fx-background-color:#073763">
+            <!-- Informations d'en-tête-->
+            <VBox prefWidth="300" spacing="10"
+                  style="-fx-background-color:#085394;"
+                  alignment="BASELINE_CENTER">
+                <Label textFill="white"
+                       text="Espace Chef de Division">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+                <!--Avatar pour l'employé-->
+                <ImageView>
+                    <Image requestedHeight="120" requestedWidth="120"
+                           url="@/images/avatarChef.png" />
+                </ImageView>
+                <!--Nom Complet de l'employé-->
+                <Label fx:id="nomComplet" textFill="darkorange"
+                       text="KAMGA DJEMGOU">
+                    <font>
+                        <Font name="System Bold" size="16" />
+                    </font>
+                </Label>
+
+            </VBox>
+
+            <!--Les onglets-->
+            <VBox spacing="20">
+                <padding>
+                    <Insets left="20" right="20" />
+                </padding>
+
+                <!-- Bouton pour l'accueil-->
+                <Button fx:id="accueil" alignment="BASELINE_LEFT" onAction="#OnAccueil"
+                        prefWidth="260" style="-fx-background-color:#073763"
+                        text="Acceuil" textFill="white">
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="Laccueil">
+                            <Image requestedHeight="30"
+                                   requestedWidth="30"
+                                   url="@/images/home.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <!--Les demandes déposées-->
+                <Button fx:id="demandes" alignment="BASELINE_LEFT"
+                        onAction="#OnDemandes" prefWidth="260"
+                        style="-fx-background-color:#073763"
+                        text="Demandes Déposées" textFill="white">
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="demandeImage">
+                            <Image requestedHeight="30"
+                                   requestedWidth="30"
+                                   url="@/images/depot.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <!--Procédures Lancées-->
+                <Button fx:id="procedures" alignment="BASELINE_LEFT"
+                        onAction="#onProcedures"
+                        prefWidth="260" style="-fx-background-color:#073763"
+                        text="Procédures Lancées" textFill="white" wrapText="true">
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="procedureImage">
+                            <Image requestedHeight="30" requestedWidth="30"
+                                   url="@/images/procLancees.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <!--Archives-->
+                <Button fx:id="archives" alignment="BASELINE_LEFT"
+                        onAction="#onArchives"
+                        prefWidth="260" style="-fx-background-color:#073763"
+                        text="Archives" textFill="white" wrapText="true">
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="archiveImage">
+                            <Image requestedHeight="30" requestedWidth="30"
+                                   url="@/images/archives.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <!--Performances-->
+                <Button fx:id="performances" alignment="BASELINE_LEFT"
+                        onAction="#onPerformances"
+                        prefWidth="260" style="-fx-background-color:#073763"
+                        text="Performances" textFill="white" wrapText="true">
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="performanceImage">
+                            <Image requestedHeight="30"
+                                   requestedWidth="30"
+                                   url="@/images/performances.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <!--Compte-->
+                <Button fx:id="compte" alignment="BASELINE_LEFT"
+                        onAction="#onCompte"
+                        prefWidth="260" style="-fx-background-color:#073763"
+                        text="Mon Compte" textFill="white" wrapText="true">
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="compteImage">
+                            <Image requestedHeight="30" requestedWidth="30"
+                                   url="@/images/compte.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <!--Log out-->
+                <Button fx:id="logOut" alignment="BASELINE_LEFT"
+                        onAction="#onLogOut"
+                        prefWidth="260" style="-fx-background-color:#073763"
+                        text="Quitter" textFill="white" wrapText="true">
+                    <font>
+                        <Font name="Bell MT bold" size="20" />
+                    </font>
+                    <graphic>
+                        <ImageView>
+                            <Image requestedHeight="30" requestedWidth="30"
+                                   url="@/images/out.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </VBox>
+        </VBox>
+    </left>
+
+</BorderPane>

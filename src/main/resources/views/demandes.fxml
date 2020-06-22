@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.controllers.demandesController"
+      prefWidth="600" spacing="20">
+    <ComboBox fx:id="optionsDivision"
+              prefWidth="200"/>
+    <TableView fx:id="demandes">
+        <columns>
+            <TableColumn fx:id="numero" prefWidth="128" text="Numéro">
+                <cellValueFactory>
+                    <PropertyValueFactory property="numero" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nomDemande" prefWidth="243" text="Nom">
+                <cellValueFactory>
+                    <PropertyValueFactory property="Nom de la demande" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="date" prefWidth="248"
+                         text="Date">
+                <cellValueFactory>
+                    <PropertyValueFactory property="date" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="boutonConsulter" prefWidth="162"
+                         text="Actions">
+                <cellValueFactory>
+                    <PropertyValueFactory property="consulter" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

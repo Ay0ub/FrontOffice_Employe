@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.controllers.LoginController"
+            prefHeight="200" prefWidth="500"
+            style="-fx-background-color: #085394;"
+            id="page">
+    <left>
+        <VBox prefWidth="250"
+              alignment="TOP_CENTER"
+              style="-fx-border-width:0 3 0 0;-fx-border-color:white;"
+              spacing="30">
+            <padding>
+                <Insets top="10"/>
+            </padding>
+            <Label text="Espace Employe"
+                   alignment="TOP_CENTER"
+                   textAlignment="CENTER"
+                   textFill="white">
+                <font>
+                    <Font name="Century Schoolbook bold" size="18"/>
+                </font>
+            </Label>
+            <ImageView>
+                <Image url="@/images/analyse.png"
+                       requestedWidth="100"
+                       requestedHeight="100"/>
+            </ImageView>
+        </VBox>
+    </left>
+
+    <center>
+        <GridPane vgap="10"
+                  hgap="10"
+                  alignment="CENTER"
+                  prefWidth="200">
+            <ImageView
+                    GridPane.rowIndex="0"
+                    GridPane.columnIndex="0">
+                <Image url="@/images/user.png"
+                       requestedWidth="20"
+                       requestedHeight="20"/>
+            </ImageView>
+            <TextField fx:id="username" prefWidth="80"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="1"
+                       promptText="Nom d'utilisateur"/>
+            <ImageView
+                    GridPane.rowIndex="1"
+                    GridPane.columnIndex="0">
+                <Image url="@/images/password.png"
+                       requestedWidth="20"
+                       requestedHeight="20"/>
+            </ImageView>
+            <TextField fx:id="password" prefWidth="80"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="1"
+                       promptText="Mot de passe"/>
+            <HBox spacing="20"
+                  GridPane.rowIndex="2"
+                  GridPane.columnSpan="2">
+                <padding>
+                    <Insets top="10"/>
+                </padding>
+                <Button fx:id="loginBoutton" onAction="#login" prefWidth="80"
+                        text="Entrer"
+                        style="-fx-background-color:#B6D7A8"/>
+                <Button fx:id="logoutButton" onAction="#exit" prefWidth="80" text="Fermer"
+                        textFill="white"
+                        style="-fx-background-color:#CF2A27"/>
+            </HBox>
+        </GridPane>
+    </center>
+</BorderPane>

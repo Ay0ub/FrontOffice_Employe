@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controllers.compteController">
+    <padding>
+        <Insets topRightBottomLeft="30" />
+    </padding>
+    <top>
+        <TitledPane text="Modifier vos informations">
+            <VBox spacing="30">
+                <GridPane hgap="20" vgap="20">
+                    <!--Numéro-->
+                    <Label text="Numéro" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+                    <Label fx:id="numero" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+
+                    <!--Nom-->
+                    <Label text="Nom" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+                    <Label fx:id="nom" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+
+                    <!--Prénom-->
+                    <Label text="Prénom" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+                    <Label fx:id="prenom" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+                    <!--Email-->
+                    <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+                    <Label fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+                    <!--Numéro de téléphone-->
+                    <Label text="Numéro de téléphone" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>
+                    <Label fx:id="tel" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <font>
+                            <Font name="System Bold" size="15" />
+                        </font>
+                    </Label>               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </VBox>
+        </TitledPane>
+    </top>
+
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" spacing="10">
+            <padding>
+                <Insets topRightBottomLeft="10" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>
